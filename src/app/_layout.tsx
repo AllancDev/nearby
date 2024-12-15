@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Stack } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { colors } from "@/styles/theme"
 import { 
@@ -35,16 +36,18 @@ export default function Layout() {
         backgroundColor="transparent" 
     />
 
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.gray[100] }}>
-        <Stack 
-            screenOptions={{ 
-                headerShown: false,
-                contentStyle: {
-                    backgroundColor: colors.gray[100], 
-                } 
-            }}
-        />
-    </SafeAreaView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: colors.gray[100] }}>
+            <Stack 
+                screenOptions={{ 
+                    headerShown: false,
+                    contentStyle: {
+                        backgroundColor: colors.gray[100], 
+                    } 
+                }}
+            />
+        </SafeAreaView>
+    </GestureHandlerRootView>
 </>
 
 }
